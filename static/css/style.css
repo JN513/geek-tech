@@ -1,0 +1,288 @@
+@charset 'utf-8';
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+.cabecalho{
+    display: flex;
+    margin-bottom: 4px solid;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #6A5ACD;
+    border-bottom: 4px solid #ccc;
+}
+
+header{
+    font-family: 'Bangers', cursive;
+    background-color: #6A5ACD;
+    color: white;
+    font-size: 25px;
+    font-style: normal;
+    padding: 0px;
+    padding-left: 30px;
+    display: flex;
+    width: auto;
+}
+
+header a{
+   color: white;
+   text-decoration: none;
+}
+
+nav{
+    width: 80%;
+    height: 60px;
+    background-color: #6A5ACD;
+    justify-content: space-between;
+}
+
+nav ul{
+    list-style: none;
+    position: relative;
+}
+
+nav ul li{
+    float: right;
+    width: 150px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px 10px;
+    text-align: center;
+    background-color: #6A5ACD;
+}
+
+nav ul ul{
+    position: absolute;
+    visibility: hidden;
+}
+
+nav ul li:hover ul{
+    visibility: visible;
+}
+
+nav ul li a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+nav ul ul li{
+    float: none;
+    width: auto;
+}
+
+nav ul ul li a{
+    background-color: #000;
+    padding: 5px;
+}
+
+body{
+    background-color: #dcdcdc;
+}
+
+main{
+    background-color: white;
+    border-left: 4px solid #ccc;
+    border-right: 4px solid #ccc;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    height: 100vh;
+    padding-bottom: 40px;
+}
+
+.volteaotopo{/*volte ao topo*/
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+}
+
+footer{
+    background-color: #6A5ACD;
+    height: 15vh;	
+    width: 100%; 
+    border-top: 4px solid #ccc;
+    text-align: center;
+    color: white;
+    padding-top: 70px;
+}      
+footer p{
+    font-size: 1.0em;
+    font-weight: 500;
+}
+
+#bt_menu{
+    display: none;
+}
+
+label[for="bt_menu"]
+{
+    display: none;
+}
+@media only screen and (max-width: 1440px){
+    .cabecalho{
+        width: 100%;
+    }
+    
+    nav{
+        width: 80%;
+    }
+
+    header{
+        font-size: 20px;
+        width: auto;
+        padding-left: 15px;
+        padding-bottom: 5px;
+    }
+    
+    nav ul li{
+        width: 150px;
+    }
+    
+}
+
+
+@media only screen and (min-width: 1280px){
+    .cabecalho{
+        width: 100%;
+    }
+    
+    nav{
+        width: 80%;
+    }
+
+    header{
+        font-size: 20px;
+        width: auto;
+        padding-left: 20px;
+        padding-bottom: 5px;
+    }
+    
+    nav ul li{
+        width: 120px;
+    }
+    
+    
+    main{
+        width: 100%;
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 1028px){
+    
+    .cabecalho{
+        width: 100%;
+    }
+    
+    nav{
+        width: 80%;
+    }
+
+    header{
+        font-size: 15px;
+        width: auto;
+        padding-left: 0px;
+        padding-bottom: 5px;
+    }
+    
+    nav ul li{
+        width: 110px;
+    }
+    main{
+        width: 100%;
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 800px){
+
+    .cabecalho{
+        display: block;
+    }
+
+    #lb1{
+        display: none;
+    }
+
+    label[for="bt_menu"]
+    { 
+        display: block;
+        color: white;
+        font-size: larger;
+        padding-left: 15px;
+    }
+
+    #bt_menu:checked ~ nav{
+        margin-left: 0;
+    }
+
+    #bt_menu:checked ~ #lb1{
+        display: block;
+    }
+    #bt_menu:checked ~ #lbm{
+        display: none;
+    }
+
+    header{
+        text-align: center;
+        width: auto;
+        padding-bottom: 5px;
+        padding-left: 15px;
+    }
+
+    #bt_menu{
+        padding-left: 15px;
+    }
+
+    nav{
+        margin-top: 5px;
+        margin-left: -100%;
+        transition: all .4s;
+        width: 100%;
+        height: 1px;
+    }
+
+    nav ul li{
+        width: 100%;
+        float: none;
+    }
+    nav ul ul{
+        position: static;
+        overflow: hidden;
+        max-height: 0;
+        transition: all .4s;
+    }
+
+    nav ul li:hover ul{
+        height: auto;
+        max-height: 200px;
+    }
+
+    main{
+        width: 100%;
+        border: none;
+    }
+
+    .volteaotopo{
+        bottom: 0.5em;
+        right: 0.5em;
+    }
+}
